@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.entity.mapper.UserEntityMapper">
+<resultMap id="BaseResultMap" type="com.example.demo.entity.UserEntity"><!---这个resultMap的意思是，以下的操作对应的实体是哪个文件里的，所有这里需要特别注意不能写错包和文件 --->
+<id column="id" property="id" jdbcType="INTEGER"/>
+<result column="name" property="name" jdbcType="VARCHAR"/>
+<result column="age" property="age" jdbcType="VARCHAR"/>
+<result column="gender" property="gender" jdbcType="VARCHAR"/>
+<result column="score" property="score" jdbcType="VARCHAR"/>
+<result column="phonenumber" property="phonenumber" jdbcType="VARCHAR"/>
+</resultMap>
+<delete id="deleteStudent" parameterType="int">
+DELETE FROM new_table WHERE id=#{id}
+</delete>
+<insert id="addStudent" parameterType="com.example.demo.entity.UserEntity">
+INSERT IGNORE INTO new_table(id,name,age,gender,score,phonenumber) VALUES(#{id},#{name},#{age},#{gender},#{score},#{phonenumber})
+</insert>
+<update id="updateStudent" parameterType="com.example.demo.entity.UserEntity">
+UPDATE new_table SET name=#{name},age=#{age},gender=#{gender},score=#{score},phonenumber=#{phonenumber} WHERE id=#{id}
+</update>
+<select id="findAllStudents" resultType="com.example.demo.entity.UserEntity">
+SELECT * FROM new_table
+</select>
+<select id="findById" resultType="com.example.demo.entity.UserEntity">
+SELECT * FROM new_table WHERE id=#{id}
+</select>
+<select id="find" resultType="com.example.demo.entity.UserEntity">
+SELECT * FROM new_table WHERE id=#{id}
+</select>
+</mapper>
