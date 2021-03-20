@@ -2,7 +2,7 @@
 * 用STS创建一个新的Spring Starter Project之后（关于创建时的配置以后再写...有点忘记了...），
 * 需要包含几个文件夹（一般会自动生成）
 * 最主要的两个就是
->> * src/main/java
+> * src/main/java
 > * src/main/resource
 * 通过学习了解到，Spring框架需要包含Entity层，Controller层以及最终的Service层，Service层提供最终服务
 * 其中所有的Java代码都放在main文件夹里，resource文件夹里包含
